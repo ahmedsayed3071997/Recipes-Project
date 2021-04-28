@@ -1,0 +1,53 @@
+<!-- Ba3d El routing  -->
+
+<div class="row">
+    <div class="col-md-5">
+        <app-recipe-list></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+        
+        <router-outlet></router-outlet>
+        
+    </div>
+</div>
+
+
+
+
+
+<!-- ABL El Routing -->
+
+<!-- Da solution With Event Binding -->
+
+<!-- 
+    <div class="row">
+    <div class="col-md-5">
+        <app-recipe-list></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+        <app-recipe-detail 
+        *ngIf="theRecipe ;else infoText" 
+        [recipe]="theRecipe" ></app-recipe-detail>
+        
+        <ng-template #infoText>
+            <p>Please Select Recipe</p>
+        </ng-template>
+        
+    </div>
+</div>
+ -->
+<!-- Da solution With Event Binding -->
+<!-- 
+<div class="row">
+    <div class="col-md-5">
+        <app-recipe-list (recipeWasSelected)="recipeSelected($event) "></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+        <app-recipe-detail *ngIf="theRecipe ;else infoText" [recipe]="theRecipe" ></app-recipe-detail>
+        <ng-template #infoText>
+            <p>Please Select Recipe</p>
+        </ng-template>
+        
+    </div>
+</div> 
+-->

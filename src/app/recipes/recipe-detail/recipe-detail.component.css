@@ -1,0 +1,5 @@
+#photoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+}

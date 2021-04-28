@@ -1,0 +1,33 @@
+<!-- <app-header (shoppingFired)="shoppingGotClicked($event)" (recipesFired)="recipesGotClicked($event,$event)"></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-mid-12">
+          <app-recipes *ngIf="recipesFiredValue "  ></app-recipes>
+          <app-shoping-list *ngIf="shoppingFiredValue"></app-shoping-list>
+        </div>
+    </div>
+</div> -->
+
+<!-- 
+  ngIf navigation
+<app-header (featuerSelected)='featuerLoded($event)'></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-mid-12">
+      <app-recipes *ngIf="theLodedFeatuer === 'recipe'"></app-recipes>
+      <app-shoping-list *ngIf="theLodedFeatuer != 'recipe'"></app-shoping-list>
+    </div>
+  </div>
+</div>
+ -->
+
+
+<!-- <app-header (featuerSelected)='featuerLoded($event)'></app-header> -->
+<app-header ></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-mid-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

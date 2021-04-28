@@ -1,0 +1,34 @@
+<!-- event binding Way  -->
+
+<!-- 
+<div class="row">
+    <div class="col-xs-10">
+        <app-shopping-edit (ingrediantAdded)="onIngrediantAdded($event)"></app-shopping-edit>
+        <hr>
+       <ul class="list-group">
+           <a class="list-group-item" 
+           style="cursor: pointer;"
+           *ngFor="let ingrediants of ingrediants">
+           {{ingrediants.name}} ({{ingrediants.amount}})
+        </a>
+       </ul>
+    </div>
+</div> -->
+
+<!-- Service Way  -->
+
+<div class="row">
+    <div class="col-xs-10">
+        <app-shopping-edit></app-shopping-edit>
+        <hr>
+       <ul class="list-group">
+           <a class="list-group-item" 
+           style="cursor: pointer;"
+           *ngFor="let ingrediants of ingrediants; let i = index"
+           (click)="onAddItem(i)">
+           {{ingrediants.name}} ({{ingrediants.amount}})
+        </a>
+       </ul>
+    </div>
+</div>
+
