@@ -21,9 +21,10 @@ import { from } from 'rxjs';
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinerComponent } from './loading-spiner/loading-spiner.component';
 import { AuthInterceptorService } from './auth/auth.interceptor.service';
-import { AlertComponent } from './shared/alert/alert.component';
 import { RercipesModule } from './recipes/recipes.modules';
 import { ShopingListModule } from './shoping-list/shoppling-list.module';
+import { SharedModule } from './shared/shared.module';
+import { HeaderModule } from './header/header.module';
 
 
 
@@ -31,16 +32,8 @@ import { ShopingListModule } from './shoping-list/shoppling-list.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    
-    
-    DroppdownDirective,
-    
     AuthComponent,
     LoadingSpinerComponent,
-    AlertComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -49,8 +42,9 @@ import { ShopingListModule } from './shoping-list/shoppling-list.module';
     HttpClientModule,
     AppRoutingMoudule,
     RercipesModule,
-    ShopingListModule
-    
+    ShopingListModule,
+    SharedModule,
+    HeaderModule
   ],
   providers: [
     shoppingService,

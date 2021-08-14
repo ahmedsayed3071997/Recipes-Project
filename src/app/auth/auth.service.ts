@@ -12,6 +12,7 @@ export interface AuthRespnseData {
     refreshToken: string,
     expiresIn: string,
     localId: string,
+    //for Signin option so it's optional
     registered?: boolean
 }
 
@@ -94,6 +95,7 @@ export class AuthService {
         }
         this.tokenExpirationtimer = null;
     }
+    
     autoLogout(expirationDuration: number) {
         this.tokenExpirationtimer = setTimeout(() => {
         this.logout()
@@ -103,8 +105,7 @@ export class AuthService {
 
     private handleAuthantication(email: string, userId: string, token: string, expiresIn: number) {
 
-        const expirationDate = new Date(
-            new Date().getTime() + expiresIn * 1000 );
+        const expirationDate = new Date(new Date().getTime() + expiresIn * 1000 );
             const user = new User(
                 email,
                 userId,
