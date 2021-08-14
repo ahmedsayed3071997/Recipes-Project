@@ -5,13 +5,15 @@ import { AlertComponent } from './alert/alert.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingMoudule } from '../app-routing.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PlaceholderDirective } from './placeholder.directive';
 
 
 
 @NgModule({
   declarations: [
     DroppdownDirective,
-    AlertComponent
+    AlertComponent,
+    PlaceholderDirective
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AlertComponent,
     HttpClientModule,
     AppRoutingMoudule,
-    DroppdownDirective
+    DroppdownDirective,
+    PlaceholderDirective
   ]
 })
 export class SharedModule { }
