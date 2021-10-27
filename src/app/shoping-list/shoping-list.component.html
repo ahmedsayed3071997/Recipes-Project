@@ -24,11 +24,14 @@
        <ul class="list-group">
            <a class="list-group-item" 
            style="cursor: pointer;"
-           *ngFor="let ingrediants of ingrediants; let i = index"
-           (click)="onAddItem(i)">
-           {{ingrediants.name}} ({{ingrediants.amount}})
+           *ngFor="let ingrediant of (ingrediants | async)?.ingrediants; let i = index"
+           (click)="onEditItem(i)">
+           {{ingrediant.name}} ({{ingrediant.amount}})
         </a>
        </ul>
     </div>
+</div>
+<div class="row">
+    <canvas #myCanvas id="my-canvase" width="600" height="400"></canvas>
 </div>
 

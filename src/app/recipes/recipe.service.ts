@@ -1,8 +1,13 @@
 import { EventEmitter, Injectable } from "@angular/core";
+import { Store } from "@ngrx/store";
 import { Subject } from "rxjs";
 import { Ingrediants } from "../shared/ingrediants.model";
 import { shoppingService } from "../shoping-list/shopping.service";
 import { Recipe } from "./recipe.model";
+
+import * as ShoppingListActions from "../shoping-list/store/shopping-list.actions"
+
+import * as fromAppReducer from '../store/app-reducer'
 @Injectable()
 export class recipeService {
     
@@ -49,7 +54,9 @@ export class recipeService {
     //now we are Storing Data in a Server
     private recipes: Recipe[] = [];
 
-    constructor(private shoppingService: shoppingService) { }
+    constructor(
+        private shoppingService: shoppingService,
+        private store: Store<fromAppReducer.AppState>) { }
     
 
     setRecipes(recipes: Recipe[]) {
@@ -62,7 +69,8 @@ export class recipeService {
     }
 
     onAddIngrediantsToShopingList(ingrediants: Ingrediants[]) {
-        this.shoppingService.addIngrediants(ingrediants)
+        // this.shoppingService.addIngrediants(ingrediants);
+        this.store.dispatch(new ShoppingListActions.AddIngrediants(ingrediants) )
     }
 
     getRecipe(id:number) {
