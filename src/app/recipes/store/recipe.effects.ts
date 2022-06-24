@@ -38,8 +38,8 @@ export class RecipesEffects {
         ofType(fromRecipesActions.STORE_RECIPE),
         withLatestFrom(this.store.select('recipes')),
         switchMap(([actionData, recipesState]) => {
-            console.log(recipesState.recipes);
-            console.log(actionData);
+            // console.log(recipesState.recipes);
+            // console.log(actionData);
             return this.http.put<any>("https://recipe-project-19e9f-default-rtdb.firebaseio.com/recipes.json", recipesState.recipes)
         })
     )    

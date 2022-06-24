@@ -28,7 +28,7 @@ export class DataStorageService {
         this.http.put("https://recipe-project-19e9f-default-rtdb.firebaseio.com/recipes.json", recipes)
             .subscribe(
                 (response) => {
-                    console.log(response);
+                    // console.log(response);
                 }
             )
     }
@@ -50,7 +50,7 @@ export class DataStorageService {
                 }),
             tap((recipes) => {
                     // this.recipeService.setRecipes(recipes)
-                    console.log(recipes);
+                    // console.log(recipes);
                     this.store.dispatch(new RecipesAction.SetRecipes(recipes));
                 }
             )    

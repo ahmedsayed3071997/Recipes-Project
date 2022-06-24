@@ -29,7 +29,7 @@ export class RecipeEditComponent implements OnInit,OnDestroy {
         this.id = +params['id'];
         this.editMode = params['id'] != null;
         this.initForm();
-        console.log(this.editMode);
+        // console.log(this.editMode);
         
         
       }
@@ -37,7 +37,7 @@ export class RecipeEditComponent implements OnInit,OnDestroy {
    
   }
   onSubmit() {
-   console.log(this.recipeForm);
+  //  console.log(this.recipeForm);
    const newRecipe = new Recipe(
     this.recipeForm.value["name"],
     this.recipeForm.value['recipeDescription'],

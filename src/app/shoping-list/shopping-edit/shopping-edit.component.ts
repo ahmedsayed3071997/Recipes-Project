@@ -45,7 +45,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     //   }
     //  )
     this.subscription = this.store.select('shoppingList').subscribe(stateData => {
-      console.log(stateData);
+      // console.log(stateData);
       if (stateData.editedIngrediantIndex > -1) {
         this.editMode = true;
         this.editedItem = stateData.editedIngrediant;
